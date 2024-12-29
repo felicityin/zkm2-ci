@@ -1,4 +1,7 @@
 FROM rustlang/rust:nightly AS builder
+RUN \
+  useradd --create-home -u 50000 -G 100 jenkins
+
 RUN apt-get update && apt-get install -y \
     autoconf \
     automake \
@@ -17,6 +20,8 @@ RUN apt-get update && apt-get install -y \
     cmake \
     ninja-build \
     && rm -rf /var/lib/apt/lists/*
+
+USER jenkins
 
 # install mips target
 RUN \

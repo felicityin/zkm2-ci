@@ -1,7 +1,8 @@
 #!/bin/sh
 
 which rustc
-ls ~/.zkm-toolchain
+echo $PATH
+ls /.zkm-toolchain
 
 cd zkm
 cd prover/examples/sha2-rust/host
