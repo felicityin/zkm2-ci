@@ -21,14 +21,6 @@ RUN apt-get update && apt-get install -y \
     ninja-build \
     && rm -rf /var/lib/apt/lists/*
 
-USER jenkins
-
-# install mips target
-RUN \
-  curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh
-
-ENV PATH=$HOME/.zkm-toolchain/rust-toolchain-x86-64-unknown-linux-gnu-20241217/bin:$PATH
-
 # install golang
 ENV GOLANG_VERSION=1.23.2
 ENV GOLANG_DOWNLOAD_URL=https://go.dev/dl/
@@ -49,6 +41,15 @@ RUN ARCH=$(uname -m) && \
     echo "${GO_SHA256} go${GOLANG_VERSION}.linux-${GOARCH}.tar.gz" | sha256sum -c - && \
     tar -C /usr/local -xzf go${GOLANG_VERSION}.linux-${GOARCH}.tar.gz && \
     rm go${GOLANG_VERSION}.linux-${GOARCH}.tar.gz
+
+
+USER jenkins
+
+# install mips target
+RUN \
+    curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh
+
+ENV PATH=$HOME/.zkm-toolchain/rust-toolchain-x86-64-unknown-linux-gnu-20241217/bin:$PATH
 
 ENV PATH=/usr/local/go/bin:$PATH
 
