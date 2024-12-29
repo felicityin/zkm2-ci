@@ -2,7 +2,8 @@
 
 which rustc
 echo $PATH
-ls /.zkm-toolchain
+. "$HOME/.zkm-toolchain/env"
+which rustc
 
 cd zkm
 cd prover/examples/sha2-rust/host
