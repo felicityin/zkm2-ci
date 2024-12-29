@@ -6,9 +6,9 @@ pipeline {
                 sh 'sh -x clone.sh'
             }
         }
-        stage('Build rust and test') {
+        stage('Build Go and test') {
             steps {
-                sh 'sh -x test_rust.sh'
+                sh 'sh -x test_go.sh'
             }
         }
         stage('Build precompile and test') {
@@ -21,9 +21,9 @@ pipeline {
                 sh 'sh -x test_revme.sh'
             }
         }
-        stage('Build Go and test') {
+        stage('Build rust and test') {
             steps {
-                sh 'sh -x test_go.sh'
+                sh 'sh -x test_rust.sh'
             }
         }
     }
