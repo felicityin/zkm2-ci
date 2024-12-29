@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 # install mips target
 RUN \
-  curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh \
+  curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh
 
 ENV PATH=$HOME/.zkm-toolchain/rust-toolchain-x86-64-unknown-linux-gnu-20241217/bin:$PATH
 
