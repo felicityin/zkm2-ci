@@ -47,6 +47,12 @@ RUN ARCH=$(uname -m) && \
 
 ENV PATH=/usr/local/go/bin:$PATH
 
+RUN echo $PATH
+
+RUN ls $HOME/.zkm-toolchain/
+
+CMD ["bash"]
+
 # docker build -t zkm/zkmips:compile .
 # docker run -it --rm -v ./:/zkm zkm/zkmips:compile
 # compile rust mips
