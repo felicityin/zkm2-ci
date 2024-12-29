@@ -16,9 +16,6 @@ RUN apt-get update && apt-get install -y \
     git \
     cmake \
     ninja-build \
-    openssl-devel \
-    zstd \
-    xz \
     && rm -rf /var/lib/apt/lists/*
 
 # install mips target
