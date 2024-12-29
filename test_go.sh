@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$HOME/.zkm-toolchain/env"
+
 cd zkm
 cd prover/examples/sha2-go/guest
 GOOS=linux GOARCH=mips GOMIPS=softfloat go build .

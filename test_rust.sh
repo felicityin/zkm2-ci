@@ -1,9 +1,6 @@
 #!/bin/sh
 
-which rustc
-echo $PATH
 . "$HOME/.zkm-toolchain/env"
-which rustc
 
 cd zkm
 cd prover/examples/sha2-rust/host

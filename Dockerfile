@@ -49,13 +49,7 @@ USER jenkins
 RUN \
     curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/zkMIPS/toolchain/refs/heads/main/setup.sh | sh
 
-ENV PATH=$HOME/.zkm-toolchain/rust-toolchain-x86-64-unknown-linux-gnu-20241217/bin:$PATH
-
 ENV PATH=/usr/local/go/bin:$PATH
-
-RUN echo $PATH
-
-RUN ls $HOME/.zkm-toolchain/
 
 CMD ["bash"]
 

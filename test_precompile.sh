@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. "$HOME/.zkm-toolchain/env"
+
 cd zkm
 cd prover/examples/sha2-rust/host
 cargo check
