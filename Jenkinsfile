@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build the benchmark and run it.') {
             steps {
-                sh 'sh -x scripts/test_benchmark.sh.sh'
+                sh 'sh -x scripts/run_benchmark.sh.sh'
             }
         }
     }
