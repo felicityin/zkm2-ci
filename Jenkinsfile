@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build the benchmark and run it.') {
             steps {
-                sh 'sh -x scripts/run_benchmark.sh.sh'
+                sh 'sh -x scripts/run_benchmark.sh'
             }
         }
         stage('Generate Groth16 and PLONK proofs for the Fibonacci guest program.') {
