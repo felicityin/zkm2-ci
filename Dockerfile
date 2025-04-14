@@ -19,6 +19,9 @@ RUN apt-get update && apt-get install -y \
     git \
     cmake \
     ninja-build \
+    llvm \
+    clang \
+    libclang-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # install golang
