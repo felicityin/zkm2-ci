@@ -6,14 +6,14 @@ pipeline {
                 sh 'sh -x scripts/clone.sh'
             }
         }
-        stage('Build an e2e proof for Groth16 and test it.') {
-            steps {
-                sh 'sh -x scripts/test_e2e_groth16.sh'
-            }
-        }
         stage('Build the benchmark and run it.') {
             steps {
                 sh 'sh -x scripts/run_benchmark.sh.sh'
+            }
+        }
+        stage('Generate Groth16 and PLONK proofs for the Fibonacci guest program.') {
+            steps {
+                sh 'sh -x scripts/run_e2e.sh'
             }
         }
     }

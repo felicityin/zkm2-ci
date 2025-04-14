@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [ -d zkm2 ]; then
-    git -C zkm2 checkout
-    git -C zkm2 pull --rebase
+if [ -d zkMIPS ]; then
+    git -C zkMIPS checkout
+    git -C zkMIPS pull --rebase
 else
-    git clone git@github.com:zkMIPS/zkm2.git
+    git clone https://github.com/zkMIPS/zkMIPS.git
 fi
 
 if [ -d zkvm-benchmarks ]; then
