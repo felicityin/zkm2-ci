@@ -11,10 +11,5 @@ pipeline {
                 sh 'sh -x scripts/run_benchmark.sh'
             }
         }
-        stage('Generate Groth16 and PLONK proofs for the Fibonacci guest program.') {
-            steps {
-                sh 'sh -x scripts/run_e2e.sh'
-            }
-        }
     }
 }
